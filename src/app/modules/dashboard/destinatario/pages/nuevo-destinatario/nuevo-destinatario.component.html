@@ -1,0 +1,47 @@
+<div fxLayoutAlign="center center" fxFlexFill>
+  <mat-card fxFlex="50%">
+    <form fxLayoutAlign="stretch" fxLayout="column" #myForm>
+      <h4 style="text-align: center;">Nuevo Destinatario</h4>
+
+      <mat-form-field>
+        <mat-label>RUT</mat-label>
+        <input type="text" name="rut" matInput [(ngModel)]="rut" required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input type="text" name="nombre" matInput [(ngModel)]="nombre" required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Apellido</mat-label>
+        <input type="text" name="apellido" matInput [(ngModel)]="apellido" required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Banco</mat-label>
+        <mat-select name="banco" [(ngModel)]="banco" required>
+          <mat-option *ngFor="let b of bancos" [value]="b">
+            {{ b }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Tipo Cuenta</mat-label>
+        <mat-select name="tipoCuenta" [(ngModel)]="tipoCuenta" required>
+          <mat-option *ngFor="let tipo of tipoCuentas" [value]="tipo">
+            {{ tipo }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Número</mat-label>
+        <input type="number" name="numero" matInput [(ngModel)]="numero" required>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" style="margin-top: 1rem;" (click)="save()">Guardar</button>
+    </form>
+  </mat-card>
+</div>

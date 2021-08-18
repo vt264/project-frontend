@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+    <span>Dashboard</span>
+    <a mat-button routerLink="inicio">Inicio</a>
+    <a mat-button routerLink="destinatario">Destinatario</a>
+    <a mat-button routerLink="movimiento">Movimientos</a>
+    <button mat-button (click)="logout()">Cerrar sesión</button>
+</mat-toolbar>
+
+<div fxLayoutAlign="center" fxFlexFill>
+    <div fxFlex="70%">
+        <div fxLayoutAlign="stretch" fxLayout="column">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+

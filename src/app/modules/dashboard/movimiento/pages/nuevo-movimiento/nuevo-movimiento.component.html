@@ -1,0 +1,23 @@
+<div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxFlex="50%">
+        <form fxLayoutAlign="stretch" fxLayout="column">
+            <h4 style="text-align: center;">Nueva Transferencia</h4>
+
+            <mat-form-field>
+                <mat-label>Destinatario</mat-label>
+                <mat-select name="destinatarioId" [(ngModel)]="destinatarioId">
+                  <mat-option *ngFor="let destinatario of destinatarios" [value]="destinatario.id">
+                    {{ destinatario.rut + ' - ' + destinatario.nombre + ' ' + destinatario.apellido }}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Número</mat-label>
+                <input type="number" name="monto" matInput [(ngModel)]="monto">
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" style="margin-top: 1rem;" (click)="save()">Guardar</button>
+        </form>
+    </mat-card>
+</div>

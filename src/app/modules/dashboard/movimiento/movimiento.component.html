@@ -1,0 +1,49 @@
+<h4>Movimientos</h4>
+
+<a mat-raised-button color="primary" style="margin-bottom: 1rem;" routerLink="nuevo">Nueva Transferencia</a>
+
+<table mat-table [dataSource]="transferencias" class="mat-elevation-z8">
+  <ng-container matColumnDef="numero">
+    <th mat-header-cell *matHeaderCellDef>#</th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="nombre">
+    <th mat-header-cell *matHeaderCellDef>Nombre</th>
+    <td mat-cell *matCellDef="let element"> {{element.destinatario.nombre}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="apellido">
+    <th mat-header-cell *matHeaderCellDef>Apellido</th>
+    <td mat-cell *matCellDef="let element"> {{element.destinatario.apellido}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="banco">
+    <th mat-header-cell *matHeaderCellDef>Banco</th>
+    <td mat-cell *matCellDef="let element"> {{element.destinatario.banco}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="tipoCuenta">
+    <th mat-header-cell *matHeaderCellDef>Tipo Cuenta</th>
+    <td mat-cell *matCellDef="let element"> {{element.destinatario.tipoCuenta}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="numeroCuenta">
+    <th mat-header-cell *matHeaderCellDef>Número Cuenta</th>
+    <td mat-cell *matCellDef="let element"> {{element.destinatario.numero}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="monto">
+    <th mat-header-cell *matHeaderCellDef>Monto Transferido</th>
+    <td mat-cell *matCellDef="let element"> {{element.monto}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="fecha">
+    <th mat-header-cell *matHeaderCellDef>Fecha</th>
+    <td mat-cell *matCellDef="let element"> {{element.createdAt}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+  

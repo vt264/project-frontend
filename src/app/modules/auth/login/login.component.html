@@ -1,0 +1,20 @@
+<div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxFlex="30%">
+        <form fxLayoutAlign="stretch" fxLayout="column">
+            <h4 style="text-align: center;">Inicio Sesión</h4>
+
+            <mat-form-field>
+                <mat-label>RUT</mat-label>
+                <input id="inputRut" type="text" matInput [formControl]="inputRut">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Contraseña</mat-label>
+                <input type="password" matInput [formControl]="inputPassword">
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" style="margin-top: 1rem;" (click)="login()">Ingresar</button>
+        </form>
+    </mat-card>
+</div>
+  
